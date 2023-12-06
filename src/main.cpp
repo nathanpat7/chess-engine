@@ -5,7 +5,7 @@ int main() {
 	std::string input;
 	Board game;
 	Move move;
-	printf("Commands:\n\tload startpos\n\tload fen <string>\n\tmove <from> <to> <type>\n\tsearch <depth>\n\tperft <depth>\n\tprint board\n\texit\n\n");
+	printf("Commands:\n\tload startpos\n\tload fen <string>\n\tmove <from> <to> <type>\n\tsearch <depth>\n\tperft <depth>\n\tprint board\n\n");
 	printf("Move types:\n\t0: normal\n\t1: pawn forward 2\n\t2: en passant\n\t3: castling\n\t4: promotion:queen\n\t5: promotion:knight\n\t6: promotion:bishop\n\t7: promotion:rook\n\n");
 
 	while (true) {
@@ -132,6 +132,9 @@ int main() {
 		}
 		if (token == "eval") {
 			printf("Current position evaluation: %.2f\n\n", game.evaluatePosition());
+		}
+		else {
+			printf("Unknown command\n\n");
 		}
 	}
 	return 0;
